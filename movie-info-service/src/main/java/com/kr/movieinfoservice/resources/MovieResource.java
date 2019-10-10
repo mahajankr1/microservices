@@ -1,5 +1,6 @@
 package com.kr.movieinfoservice.resources;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,7 +25,7 @@ public class MovieResource {
     public Movie getMovieInfo(@PathVariable("movieId") String movieId) {
         MovieSummary movieSummary = restTemplate.getForObject("https://api.themoviedb.org/3/movie/" + movieId + "?api_key=" +  apiKey, MovieSummary.class);
         return new Movie(movieId, movieSummary.getTitle(), movieSummary.getOverview());
-
+//        return new Movie(movieId, "test", "dummy");
     }
 
 }
