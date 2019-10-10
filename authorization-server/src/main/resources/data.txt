@@ -1,0 +1,38 @@
+INSERT INTO oauth_client_details (client_id, client_secret, web_server_redirect_uri, scope, access_token_validity, refresh_token_validity, resource_ids, authorized_grant_types, additional_information) VALUES ('blakol-tika', '{bcrypt}$2a$10$9nMrImBzcSk6TRGg5a5SP.4Z6.5D2MzGdqOdxXEE1qQq7LsufbU42', 'http://localhost:8080/code', 'READ,WRITE', '3600', '10000', 'inventory,payment', 'authorization_code,password,refresh_token,implicit', '{}');
+INSERT INTO oauth_client_details (client_id, client_secret, web_server_redirect_uri, scope, access_token_validity, refresh_token_validity, resource_ids, authorized_grant_types, additional_information) VALUES ('blakol-kibana', '{bcrypt}$2a$10$aNo0ssqV2ymH2dmxJKQwXeIIVnohZMTxmjvASrQGLF14WNVhzrBVu', 'http://localhost:8080/code', 'READ,WRITE', '3600', '10000', 'inventory,payment', 'authorization_code,password,refresh_token,implicit', '{}');
+
+ INSERT INTO permission (NAME) VALUES
+ ('create_profile'),
+ ('read_profile'),
+ ('update_profile'),
+ ('delete_profile');
+
+ INSERT INTO role (NAME) VALUES
+		('ROLE_admin'),('ROLE_editor'),('ROLE_operator');
+
+ INSERT INTO permission_role (PERMISSION_ID, ROLE_ID) VALUES
+     (1,1), /*create-> admin */
+     (2,1), /* read admin */
+     (3,1), /* update admin */
+     (4,1), /* delete admin */
+     (2,2),  /* read Editor */
+     (3,2),  /* update Editor */
+     (2,3);  /* read operator */
+
+insert into user (id, username,password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('1', 'ketan','{bcrypt}$2a$10$jnOVpuM0v.11wbmckfh47uz/TeIfacfs3nJnwcj8ECLUQ7W1SVb7e', 'ketan@example.com', '1', '1', '1', '1');
+insert into  user (id, username,password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('2', 'irfan', '{bcrypt}$2a$10$7K7Id3PSSZa8/CG7XWo2Gu7Wj6Jcm6AP9HiyHwoRTynjT.Z4E5C96','irfan@example.com', '1', '1', '1', '1');
+insert into  user (id, username,password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('3', 'billo', '{bcrypt}$2a$10$TPp03O.BXzrU0U4wnmHPpOF4OjycCF9D.XwRV2ZvPdD0jtfwvfmRm','billo@example.com', '1', '1', '1', '1');
+
+/*
+ passowrds:
+ ketan - ketan123
+ irfan - irfan123
+ billo - billo123
+ */
+
+
+INSERT INTO role_user (ROLE_ID, USER_ID)
+    VALUES
+    (1, 1) /* ketan-admin */,
+    (2, 2) /* irfan-editor */ ,
+    (3, 3) /* billo-viewer */ ;

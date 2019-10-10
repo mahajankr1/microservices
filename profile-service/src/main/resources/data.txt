@@ -1,0 +1,3 @@
+INSERT INTO customer (firstName,lastName, dlNumber, zipcode) VALUES	('Asif', 'Asif', 'ASIF560034', '560034');
+INSERT INTO customer (firstName,lastName, dlNumber, zipcode) VALUES	('Rahul', 'Rahul', 'RAHUL560062', '560062');
+INSERT INTO customer (firstName,lastName, dlNumber, zipcode) VALUES	('John', 'John', 'JOHN560029', '560029');
