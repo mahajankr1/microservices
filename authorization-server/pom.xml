@@ -12,7 +12,7 @@
     <artifactId>server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>authorization-server</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Blakol oauth server test </description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -20,15 +20,15 @@
     </properties>
 
     <dependencies>
-    	<dependency>
+    	<!--<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
+		</dependency>-->
         <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-hystrix -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
